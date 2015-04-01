@@ -16,13 +16,13 @@ or add this to `composer.json`
 ```
 
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
-```
+```php
 'Jenky\LaravelEnvLoader\EnvLoaderServiceProvider',
 ```
 
 Add this to your facades in `config/app.php`:
 
-```
+```php
 'EnvLoader' => 'Jenky\LaravelEnvLoader\Facades\Loader',
 ```
 
@@ -34,12 +34,12 @@ php artisan vendor:publish
 The config files will be published to `config/app/env`
 
 Edit your `app/Providers/AppServiceProvider.php` add
-```
+```php
 \EnvLoader::loadProviders()->loadAliases();
 ```
 
 and `app/Providers/ConfigServiceProvider.php` add
-```
+```php
 \EnvLoader::loadConfigs();
 ```
 to the `register` function 
@@ -48,7 +48,7 @@ to the `register` function
 ## Usage
 
 Modify the config files in `config/app/env` to suite your needs
-```
+```php
 /* configs.php */
 
 return [
@@ -71,7 +71,7 @@ return [
 ```
 
 Multiple environments may be delimited using a "pipe" character
-```
+```php
 /* aliases.php */
 
 return [
