@@ -1,22 +1,15 @@
 <?php namespace Jenky\LaravelEnvLoader;
 
 use Illuminate\Foundation\AliasLoader;
-
 use Closure;
 
 class Loader {
 
 	protected $app;
-	protected $loader;
 
-	protected $configs = [];
-	protected $aliases = [];
-	protected $providers = [];
-
-	public function __construct()
+	public function __construct($app)
 	{
-		$this->app = app();
-		$this->loader = AliasLoader::getInstance();
+		$this->app = $app;
 	}
 
 	protected function explodeEnvironment($environment)
@@ -90,7 +83,7 @@ class Loader {
 			{
 				foreach ($configs as $alias => $class) 
 				{
-					$this->loader->alias($alias, $class);
+					$this->app->alias($alias, $class);
 				}        				
 			}
 		});

@@ -33,18 +33,6 @@ php artisan vendor:publish
 ```
 The config files will be published to `config/app/env`
 
-Edit your `app/Providers/AppServiceProvider.php` add
-```php
-\EnvLoader::loadProviders()->loadAliases();
-```
-
-and `app/Providers/ConfigServiceProvider.php` add
-```php
-\EnvLoader::loadConfigs();
-```
-to the `register` function 
-
-
 ## Usage
 
 Modify the config files in `config/app/env` to suite your needs

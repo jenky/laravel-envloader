@@ -32,7 +32,9 @@ class EnvLoaderServiceProvider extends ServiceProvider {
 
 		$this->app['envloader'] = $this->app->share(function($app)
 		{
-			return $app->make('Jenky\LaravelEnvLoader\Loader');
+			return $app->make('Jenky\LaravelEnvLoader\Loader', [
+				$app
+			]);
 		});
 	}
 
@@ -50,6 +52,8 @@ class EnvLoaderServiceProvider extends ServiceProvider {
 			$configPath . '/configs.php' => config_path('env/configs.php'),
 			$configPath . '/providers.php' => config_path('env/providers.php')
 		], 'config');
+
+		$this->app['envloader']->loadConfigs()->loadProviders()->loadAliases();
 	}
 
 	/**
