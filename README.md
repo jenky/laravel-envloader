@@ -20,12 +20,6 @@ After updating composer, add the ServiceProvider to the providers array in `conf
 'Jenky\LaravelEnvLoader\EnvLoaderServiceProvider',
 ```
 
-Add this to your facades in `config/app.php`:
-
-```php
-'EnvLoader' => 'Jenky\LaravelEnvLoader\Facades\Loader',
-```
-
 Copy the package config to your local config with the publish command:
 
 ```
