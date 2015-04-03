@@ -18,7 +18,6 @@ class EnvLoaderServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-
 		$configPaths = [
 			'aliases' => __DIR__ . '/../config/aliases.php',
 			'configs' => __DIR__ . '/../config/configs.php',
@@ -36,6 +35,8 @@ class EnvLoaderServiceProvider extends ServiceProvider {
 				$app
 			]);
 		});
+
+		$this->app['envloader']->loadConfigs()->loadProviders()->loadAliases();
 	}
 
 	/**
@@ -51,9 +52,7 @@ class EnvLoaderServiceProvider extends ServiceProvider {
 			$configPath . '/aliases.php' => config_path('env/aliases.php'),
 			$configPath . '/configs.php' => config_path('env/configs.php'),
 			$configPath . '/providers.php' => config_path('env/providers.php')
-		], 'config');
-
-		$this->app['envloader']->loadConfigs()->loadProviders()->loadAliases();
+		], 'config');		
 	}
 
 	/**
