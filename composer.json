@@ -1,6 +1,7 @@
 {
     "name": "jenky/laravel-envloader",
-    "description": "",
+    "description": "Laravel 5 environment loader",
+    "keywords": ["framework", "laravel"],
     "authors": [
         {
             "name": "Linh Tran",
