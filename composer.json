@@ -2,6 +2,7 @@
     "name": "jenky/laravel-envloader",
     "description": "Laravel 5 environment loader",
     "keywords": ["framework", "laravel"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Linh Tran",
