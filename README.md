@@ -1,7 +1,7 @@
 ## Laravel 5 environment loader
 
 [![Latest Stable Version](https://poser.pugx.org/jenky/laravel-envloader/v/stable.svg)](https://packagist.org/packages/jenky/laravel-envloader) 
-[![Total Downloads](https://poser.pugx.org/jenky/laravel-envloader/downloads.svg)](https://packagist.org/packages/jenky/laravel-envloader) 
+[![Total Downloads](https://poser.pugx.org/jenky/laravel-envloader/d/total.svg)](https://packagist.org/packages/jenky/laravel-envloader) 
 [![License](https://poser.pugx.org/jenky/laravel-envloader/license.svg)](https://packagist.org/packages/jenky/laravel-envloader)
 
 Load configs, providers, aliases based on the `APP_ENV` name in `.env`.
