@@ -22,6 +22,8 @@ or add this to `composer.json`
 After updating composer, add the ServiceProvider to the providers array in `config/app.php`
 ```php
 'Jenky\LaravelEnvLoader\EnvLoaderServiceProvider',
+// or 
+Jenky\LaravelEnvLoader\EnvLoaderServiceProvider::class, // PHP 5.5
 ```
 
 Copy the package config to your local config with the publish command:
