@@ -19,11 +19,19 @@ or add this to `composer.json`
 "jenky/laravel-envloader": "~1.0"
 ```
 
-After updating composer, add the ServiceProvider to the providers array in `config/app.php`
+After updating composer, add the ServiceProvider to the providers array in `config/app.php`. Make sure the `EnvLoaderServiceProvider` is loaded before other app service providers.
 ```php
 'Jenky\LaravelEnvLoader\EnvLoaderServiceProvider',
 // or 
 Jenky\LaravelEnvLoader\EnvLoaderServiceProvider::class, // PHP 5.5
+
+/*
+ * Application Service Providers...
+ */
+App\Providers\AppServiceProvider::class,
+App\Providers\EventServiceProvider::class,
+App\Providers\RouteServiceProvider::class,
+// ... 
 ```
 
 Copy the package config to your local config with the publish command:
