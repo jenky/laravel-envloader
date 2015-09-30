@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Environment Name => Configs
+ * Environment Name => Configs.
  *
  * @return array
- */ 
+ */
 
 return [
-	/*'local' => [
-		'app' => [
-			'url' => 'http://laravel.local',
-		],
-	],
-	'testing' => [
-		'session' => [
-			'driver' => 'file',
-		],
-	],*/
+    /*'local' => [
+        'app' => [
+            'url' => 'http://laravel.local',
+        ],
+    ],
+    'testing' => [
+        'session' => [
+            'driver' => 'file',
+        ],
+    ],*/
 ];

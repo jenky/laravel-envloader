@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Environment Name => Providers
+ * Environment Name => Providers.
  *
  * @return array
- */ 
+ */
 
 return [
-	'local' => [
-		// 'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-		// 'Barryvdh\Debugbar\ServiceProvider',
-	],
+    'local' => [
+        // 'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        // 'Barryvdh\Debugbar\ServiceProvider',
+    ],
 ];
