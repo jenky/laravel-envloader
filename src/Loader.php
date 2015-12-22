@@ -16,6 +16,7 @@ class Loader
      * Class constructor.
      * 
      * @param \Illuminate\Contracts\Foundation\Application $app
+     * 
      * @return void
      */
     public function __construct(Application $app)
@@ -38,7 +39,7 @@ class Loader
      * Overwrite the original config value based
      * on environment name.
      * 
-     * @param  array       $configs
+     * @param  array        $configs
      * @param  Closure|null $closure
      * @return void
      */
