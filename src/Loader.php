@@ -3,21 +3,45 @@
 namespace Jenky\LaravelEnvLoader;
 
 use Closure;
+use Illuminate\Contracts\Foundation\Application;
 
 class Loader
 {
+    /** 
+     * @var \Illuminate\Contracts\Foundation\Application
+     */
     protected $app;
 
-    public function __construct($app)
+    /**
+     * Class constructor.
+     * 
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @return void
+     */
+    public function __construct(Application $app)
     {
         $this->app = $app;
     }
 
+    /**
+     * Explode the enviroment name.
+     * 
+     * @param  string $environment
+     * @return array
+     */
     protected function explodeEnvironment($environment)
     {
         return (is_string($environment)) ? explode('|', $environment) : $environment;
     }
 
+    /**
+     * Overwrite the original config value based
+     * on environment name.
+     * 
+     * @param  array       $configs
+     * @param  Closure|null $closure
+     * @return void
+     */
     protected function loadData($configs, Closure $closure = null)
     {
         if (is_null($configs)) {
@@ -41,16 +65,26 @@ class Loader
         }
     }
 
+    /**
+     * Load the config values.
+     * 
+     * @return \Jenky\LaravelEnvLoader\Loader
+     */
     public function loadConfigs()
     {
         $this->loadData(config('env.configs'), function ($configs) {
             $configs = array_dot($configs);
-            config($configs);
+            $this->app['config']->set($configs);
         });
 
         return $this;
     }
 
+    /**
+     * Load the providers.
+     * 
+     * @return \Jenky\LaravelEnvLoader\Loader
+     */
     public function loadProviders()
     {
         $this->loadData(config('env.providers'), function ($configs) {
@@ -64,6 +98,11 @@ class Loader
         return $this;
     }
 
+    /**
+     * Load the aliases.
+     * 
+     * @return \Jenky\LaravelEnvLoader\Loader
+     */
     public function loadAliases()
     {
         $this->loadData(config('env.aliases'), function ($configs) {

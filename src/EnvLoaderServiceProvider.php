@@ -20,20 +20,18 @@ class EnvLoaderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $configPaths = [
-            'aliases'   => __DIR__.'/../config/aliases.php',
-            'configs'   => __DIR__.'/../config/configs.php',
-            'providers' => __DIR__.'/../config/providers.php',
-        ];
+        $this->registerEnvLoader();
+    }
 
-        foreach ($configPaths as $key => $path) {
-            $this->mergeConfigFrom($path, 'env.'.$key);
-        }
-
-        $this->app['envloader'] = $this->app->share(function ($app) {
-            return $app->make('Jenky\LaravelEnvLoader\Loader', [
-                $app,
-            ]);
+    /**
+     * Register the env loader class.
+     *
+     * @return void
+     */
+    protected function registerEnvLoader()
+    {
+        $this->app->singleton('envloader', function ($app) {
+            return new Loader($app);
         });
 
         $this->app['envloader']->loadConfigs()->loadProviders()->loadAliases();
@@ -45,6 +43,16 @@ class EnvLoaderServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
+    {
+        $this->setupConfig();
+    }
+
+    /**
+     * Setup the config.
+     *
+     * @return void
+     */
+    protected function setupConfig()
     {
         $configPath = __DIR__.'/../config';
 
