@@ -27,7 +27,8 @@ class Loader
     /**
      * Explode the enviroment name.
      * 
-     * @param  string $environment
+     * @param string $environment
+     *
      * @return array
      */
     protected function explodeEnvironment($environment)
@@ -39,8 +40,9 @@ class Loader
      * Overwrite the original config value based
      * on environment name.
      * 
-     * @param  array        $configs
-     * @param  Closure|null $closure
+     * @param array        $configs
+     * @param Closure|null $closure
+     *
      * @return void
      */
     protected function loadData($configs, Closure $closure = null)
