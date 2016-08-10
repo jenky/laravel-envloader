@@ -7,16 +7,16 @@ use Illuminate\Contracts\Foundation\Application;
 
 class Loader
 {
-    /** 
+    /**
      * @var \Illuminate\Contracts\Foundation\Application
      */
     protected $app;
 
     /**
      * Class constructor.
-     * 
+     *
      * @param \Illuminate\Contracts\Foundation\Application $app
-     * 
+     *
      * @return void
      */
     public function __construct(Application $app)
@@ -26,7 +26,7 @@ class Loader
 
     /**
      * Explode the enviroment name.
-     * 
+     *
      * @param string $environment
      *
      * @return array
@@ -39,7 +39,7 @@ class Loader
     /**
      * Overwrite the original config value based
      * on environment name.
-     * 
+     *
      * @param array        $configs
      * @param Closure|null $closure
      *
@@ -70,7 +70,7 @@ class Loader
 
     /**
      * Load the config values.
-     * 
+     *
      * @return \Jenky\LaravelEnvLoader\Loader
      */
     public function loadConfigs()
@@ -85,7 +85,7 @@ class Loader
 
     /**
      * Load the providers.
-     * 
+     *
      * @return \Jenky\LaravelEnvLoader\Loader
      */
     public function loadProviders()
@@ -103,7 +103,7 @@ class Loader
 
     /**
      * Load the aliases.
-     * 
+     *
      * @return \Jenky\LaravelEnvLoader\Loader
      */
     public function loadAliases()
