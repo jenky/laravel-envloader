@@ -18,5 +18,12 @@
             "Jenky\\LaravelEnvLoader\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jenky\\LaravelEnvLoader\\EnvLoaderServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "stable"
 }
